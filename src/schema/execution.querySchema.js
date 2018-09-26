@@ -13,4 +13,10 @@ module.exports = [
     title: '状态',
     dataType: 'varchar',
   },
+
+  {
+    key: 'ip',
+    title: 'ip',
+    dataType: 'varchar',
+  },
 ];

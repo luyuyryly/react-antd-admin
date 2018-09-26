@@ -14,36 +14,47 @@
 const sidebarMenu = [
   {
     key: 'index',  // route时url中的值
-    name: '菜单哈哈哈',  // 在菜单中显示的名称
-    icon: 'smile',  // 图标是可选的
+    name: '监控大盘',  // 在菜单中显示的名称
+    icon: 'area-chart',  // 图标是可选的
     child: [
       {
         key: 'option1',
         name: '模拟CRUD',
         icon: 'play-circle',   // 二级三级菜单也可以带图标
       },
-      {
+      /*{
         key: 'option2',
         name: '图片DEMO',
         icon: 'android',
-      },
+      },*/
       {
         key: 'option3',
         name: '自定义操作',
         icon: 'bulb',
       },
+      {
+        key: 'monitor',
+        name: '监控大盘',
+        icon: 'bulb',
+      },
     ],
   },
   {
-    key: 'alone',
-    name: '我没有子菜单',
+    key: 'job',
+    name: '任务列表',
     icon: 'clock-circle',
   },
   {
-    key: 'alone2',
-    name: '我没有图标',
+    key: 'execution',
+    name: '历史执行',
+    icon: 'clock-circle',
   },
   {
+    key: 'machine',
+    name: '机器列表',
+    icon: 'clock-circle',
+  },
+  /*{
     key: 'noiconhaha',
     name: '又一个没图标的',
     child: [
@@ -129,7 +140,7 @@ const sidebarMenu = [
         ],
       },
     ],
-  },
+  },*/
 ];
 
 export default sidebarMenu;
@@ -143,34 +154,34 @@ export const headerMenu = [
     key: 'userMenu',
     child: [
       {
-        key: 'modifyUser',
-        name: '修改用户信息',
+        key: 'redirectBC',
+        name: '百川admin后台',
         icon: 'bulb',
         // 对于headerMenu的菜单项, 可以让它跳到外部地址, 如果设置了url属性, 就会打开一个新窗口
         // 如果不设置url属性, 行为和sidebarMenu是一样的, 激活特定的组件, 注意在index.js中配置好路由, 否则会404
-        url: 'http://jxy.me',
+        url: 'http://train.xiaojukeji.com/admin-index/#/',
       },
       {
         key: 'user222',
-        name: '药药切克闹',
+        name: '个人信息',
         icon: 'rocket',
       },
-      {
+      /*{
         key: 'user333',
-        name: '选项3',
+        name: '子菜单',
         child: [
           {
             key: 'user333aaa',
-            name: 'user333aaa',
+            name: '使用说明',
             icon: 'windows',
           },
           {
             key: 'user333bbb',
-            name: 'user333bbb',
+            name: '联系方式',
             url: 'http://jxy.me',
           },
         ],
-      },
+      },*/
     ],
   },
   {
@@ -180,24 +191,25 @@ export const headerMenu = [
     child: [
       {
         key: 'headerMenu111',
-        name: '菜单项1',
+        name: 'timerx使用wiki',
         icon: 'windows',
-        url: 'http://jxy.me',
+        url: 'http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=152839606',
       },
       {
         key: '菜单项2',
-        name: '短信表管理',
+        name: '报警',
+        icon: 'chrome',
         url: 'http://jxy.me',
       },
       {
         key: '菜单项3',
-        name: '选项3',
+        name: '配置',
         icon: 'chrome',
         url: 'http://jxy.me',
       },
     ],
   },
-  {
+  /*{
     key: 'headerMenu3',
     name: '我没有子菜单',
     icon: 'setting',
@@ -248,5 +260,5 @@ export const headerMenu = [
         ],
       },
     ],
-  },
+  },*/
 ];

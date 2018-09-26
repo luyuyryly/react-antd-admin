@@ -141,7 +141,7 @@ export default {
   error(errorMsg) {
     notification.error({
       message: '出错啦!',
-      description: `请联系管理员, 错误信息: ${errorMsg}`,
+      description: `/请联系管理员, 错误信息: ${errorMsg}`,
       duration: 0,
     });
   },

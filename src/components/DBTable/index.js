@@ -281,6 +281,11 @@ class DBTable extends React.PureComponent {
     const tmpObj = Object.assign({}, queryObj);  // 创建一个新的临时对象, 其实直接修改queryObj也可以
     tmpObj.page = page;
     tmpObj.pageSize = pageSize;
+    tmpObj.params = {
+      data : JSON.stringify(queryObj),
+      currentPage : page,
+      pageSize : pageSize,
+    };
 
     // 每次查询时, 要显示一个提示, 同时table组件也要变为loading状态
     const hide = message.loading('正在查询...', 0);
@@ -293,6 +298,7 @@ class DBTable extends React.PureComponent {
       return res;
     } catch (ex) {  // 统一的异常处理, 上层方法不用关心
       logger.error('select exception, %o', ex);
+      console.log('select exception, %o', ex);
       hide();
       const res = {};  // 手动构造一个res返回
       res.success = false;
@@ -307,7 +313,7 @@ class DBTable extends React.PureComponent {
    * @param page
    */
   handlePageChange = async(page) => {
-    logger.debug('handlePageChange, page = %d', page);
+    console.log('handlePageChange, page = %d', page);
     const res = await this.select(this.state.queryObj, page, this.state.pageSize);
     if (res.success) {
       this.setState({
@@ -348,7 +354,8 @@ class DBTable extends React.PureComponent {
    * @param queryObj
    */
   handleFormSubmit = async(queryObj) => {
-    logger.debug('handleFormSubmit, queryObj = %o', queryObj);
+//    logger.debug('handleFormSubmit, queryObj = %o', queryObj);
+    console.log('handleFormSubmit, queryObj = %o', queryObj);
     // 这时查询条件已经变了, 要从第一页开始查
     const res = await this.select(queryObj, 1, this.state.pageSize);
     if (res.success) {

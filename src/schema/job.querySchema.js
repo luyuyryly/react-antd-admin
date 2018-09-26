@@ -8,9 +8,9 @@ module.exports = [
     title: '任务名称',    // 前端显示的名称
     dataType: 'varchar',
   },
-  {
-    key: 'status',
-    title: '状态',
-    dataType: 'varchar',
-  },
+  // {
+  //   key: 'status',
+  //   title: '状态',
+  //   dataType: 'varchar',
+  // },
 ];

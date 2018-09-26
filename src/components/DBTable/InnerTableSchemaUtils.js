@@ -57,7 +57,6 @@ const SchemaUtils = {
         // 这样$$的前缀表示是内部的临时变量, 我觉得这种挺蛋疼的, 但没啥好办法...
         field.$$optionMap = this.transformOptionMap(field.options, field.showType);
       }
-
       // 有点类似索引
       fieldMap.set(field.key, field);
       // 当前列是否是主键?
@@ -108,7 +107,6 @@ const SchemaUtils = {
    */
   transformOptionMap(options, showType){
     const optionMap = {};
-
     // 对于级联选择要特殊处理下
     if (showType === 'cascader') {
       const browseOption = (item) => {  // dfs

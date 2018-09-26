@@ -27,8 +27,10 @@ class Ajax {
    * @returns {Promise}
    */
   requestWrapper(method, url, {params, data, headers} = {}) {
-    logger.debug('method=%s, url=%s, params=%o, data=%o, headers=%o', method, url, params, data, headers);
+//    logger.debug('method=%s, url=%s, params=%o, data=%o, headers=%o', method, url, params, data, headers);
+    console.log('method=%s, url=%s, params=%o, data=%o, headers=%o', method, url, params, data, headers);
     return new Promise((resolve, reject) => {
+
       const tmp = superagent(method, url);
       // 是否是跨域请求
       if (globalConfig.isCrossDomain()) {
@@ -84,7 +86,17 @@ class Ajax {
    * @returns {*}
    */
   getCurrentUser() {
-    return this.get(`${globalConfig.getAPIPath()}${globalConfig.login.getCurrentUser}`);
+//    return this.get(`${globalConfig.getAPIPath()}${globalConfig.login.getCurrentUser}`);
+//     return mockPromise(resolve => {
+//       result.success = true;
+//       result.data = 'guest';
+//       resolve(result);
+//     });
+    const result = {  // 暂存mock的ajax返回, 总共有5个字段
+      success: true,
+      code: 0
+    };
+    return result;
   }
 
   /**
@@ -131,7 +143,7 @@ class CRUDUtil {
    * @returns {*}
    */
   select(queryObj) {
-    return this.ajax.post(`${globalConfig.getAPIPath()}/${this.tableName}/select`, queryObj);
+    return this.ajax.get(`${globalConfig.getAPIPath()}/${this.tableName}/list`, queryObj);
   }
 
   /**
