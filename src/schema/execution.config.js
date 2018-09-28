@@ -3,4 +3,5 @@ module.exports = {
   showDelete: false,  // 是否显示删除按钮, 默认true
   showImport: false,  // 是否显示导入按钮, 默认true
   showInsert: false,
+  showUpdate: false,
 }

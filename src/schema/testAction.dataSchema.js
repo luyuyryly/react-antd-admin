@@ -49,7 +49,7 @@ module.exports = [
   // 注意, 如果没有定义主键, 是不允许更新和删除的
   {
     // 这个key是我预先定义好的, 注意不要冲突
-    key: 'singleRecordActions',
+    key: 'singleRecordActions2',
     title: '我是自定义操作',  // 列名
     width: 300,  // 宽度
     actions: [

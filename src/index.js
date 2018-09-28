@@ -14,6 +14,7 @@ import App from './components/App';
 import Welcome from './components/Welcome';
 import Error from './components/Error';
 import Hello from './components/Hello';
+import Dashboard from './components/Dashboard/Dashboard';
 //import DBTable from './components/DBTable';
 
 // 将DBTable组件做成动态路由, 减小bundle size
@@ -73,10 +74,10 @@ const routes = (
           </Route>
         </Route>
 
-        <Route path="headerMenu4" component={Hello} />
+        <Route path="core1" component={Dashboard} />
         <Route path="job" tableName="job" getComponent={DBTableContainer} />
         <Route path="execution" tableName="execution" getComponent={DBTableContainer} />
-        <Route path="machine" tableName="machine" getComponent={DBTableContainer} />
+        <Route path="group" tableName="group" getComponent={DBTableContainer} />
 
         <Route path="*" component={Error} />
 

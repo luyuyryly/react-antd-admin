@@ -473,6 +473,61 @@ class InnerTable extends React.PureComponent {
   };
 
   /**
+   * 暂停（目前针对任务列表页面的任务）
+   *
+   * @param record
+   */
+  onSingleRecordPause = (record) => {
+    const selectedKey = record[this.primaryKey];
+    Modal.confirm({
+      title: '确认暂停该任务',
+      content: `当前被选中的行: ${selectedKey}`,
+      onOk: () => {
+        const keys = [];
+        keys.push(selectedKey);
+        this.handlePause(keys);
+      },
+    });
+  };
+
+  /**
+   * 暂停（目前针对任务列表页面的任务）
+   *
+   * @param record
+   */
+  onSingleRecordInterrupt = (record) => {
+    const selectedKey = record[this.primaryKey];
+    Modal.confirm({
+      title: '确认暂停该任务',
+      content: `当前被选中的行: ${selectedKey}`,
+      onOk: () => {
+        const keys = [];
+        keys.push(selectedKey);
+        this.handleInterrupt(keys);
+      },
+    });
+  };
+
+  /**
+   * 暂停（目前针对任务列表页面的任务）
+   *
+   * @param record
+   */
+  onSingleRecordResume = (record) => {
+    const selectedKey = record[this.primaryKey];
+    Modal.confirm({
+      title: '确认立即执行该任务',
+      content: `当前被选中的行: ${selectedKey}`,
+      onOk: () => {
+        const keys = [];
+        keys.push(selectedKey);
+        this.handleResume(keys);
+      },
+    });
+  };
+
+
+  /**
    * 自定义组件实现对单条记录的更新
    * 可以满足一些定制化的需求, 优化用户体验
    *
@@ -638,6 +693,111 @@ class InnerTable extends React.PureComponent {
         notification.success({
           message: '删除成功',
           description: `删除${res.data}条数据`,
+          duration: 3,
+        });
+
+        // 数据变化后, 刷新下表格
+        const newData = [];
+        const keySet = new Set(keys);  // array转set
+        for (const record of this.state.data) {
+          if (!keySet.has(record.key)) {  // 是否是被删除的记录
+            newData.push(record);
+          }
+        }
+        this.setState({selectedRowKeys: [], data: newData});
+      } else {
+        this.error(res.message);
+      }
+    } catch (ex) {
+      logger.error('delete exception, %o', ex);
+      hide();
+      this.error(`网络请求出错: ${ex.message}`);
+    }
+  }
+
+  /**
+   * 真正去删除数据
+   */
+  async handlePause(keys = this.state.selectedRowKeys) {
+    const CRUD = ajax.CRUD(this.props.tableName);
+    const hide = message.loading('正在暂停...', 0);
+    try {
+      const res = await CRUD.pause(keys);
+      hide();
+      if (res.success) {
+        notification.success({
+          message: '操作成功',
+//          description: `删除${res.data}条数据`,
+          duration: 3,
+        });
+
+        // 数据变化后, 刷新下表格
+        const newData = [];
+        const keySet = new Set(keys);  // array转set
+        for (const record of this.state.data) {
+          if (!keySet.has(record.key)) {  // 是否是被删除的记录
+            newData.push(record);
+          }
+        }
+        this.setState({selectedRowKeys: [], data: newData});
+      } else {
+        this.error(res.message);
+      }
+    } catch (ex) {
+      logger.error('delete exception, %o', ex);
+      hide();
+      this.error(`网络请求出错: ${ex.message}`);
+    }
+  }
+
+  /**
+   * 真正去删除数据
+   */
+  async handleInterrupt(keys = this.state.selectedRowKeys) {
+    const CRUD = ajax.CRUD(this.props.tableName);
+    const hide = message.loading('正在暂停...', 0);
+    try {
+      const res = await CRUD.interrupt(keys);
+      hide();
+      if (res.success) {
+        notification.success({
+          message: '操作成功',
+//          description: `删除${res.data}条数据`,
+          duration: 3,
+        });
+
+        // 数据变化后, 刷新下表格
+        const newData = [];
+        const keySet = new Set(keys);  // array转set
+        for (const record of this.state.data) {
+          if (!keySet.has(record.key)) {  // 是否是被删除的记录
+            newData.push(record);
+          }
+        }
+        this.setState({selectedRowKeys: [], data: newData});
+      } else {
+        this.error(res.message);
+      }
+    } catch (ex) {
+      logger.error('delete exception, %o', ex);
+      hide();
+      this.error(`网络请求出错: ${ex.message}`);
+    }
+  }
+
+  /**
+   * 真正去删除数据
+   */
+  async handleResume(keys = this.state.selectedRowKeys) {
+    const CRUD = ajax.CRUD(this.props.tableName);
+    const hide = message.loading('正在执行...', 0);
+    try {
+      const res = await CRUD.resume(keys);
+      hide();
+      if (res.success) {
+        notification.success({
+          message: '操作成功',
+//          description: `删除${res.data}条数据`,
           duration: 3,
         });
 

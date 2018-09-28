@@ -12,32 +12,37 @@
 
 // 定义siderbar菜单
 const sidebarMenu = [
+  // {
+  //   key: 'index',  // route时url中的值
+  //   name: '监控大盘',  // 在菜单中显示的名称
+  //   icon: 'area-chart',  // 图标是可选的
+  //   child: [
+  //     {
+  //       key: 'options1',
+  //       name: '核心大盘',
+  //       icon: 'bulb',   // 二级三级菜单也可以带图标
+  //     },
+  //     /*{
+  //       key: 'option2',
+  //       name: '图片DEMO',
+  //       icon: 'android',
+  //     },*/
+  //     // {
+  //     //   key: 'option3',
+  //     //   name: '自定义操作',
+  //     //   icon: 'bulb',
+  //     // },
+  //     // {
+  //     //   key: 'monitor',
+  //     //   name: '监控大盘',
+  //     //   icon: 'bulb',
+  //     // },
+  //   ],
+  // },
   {
-    key: 'index',  // route时url中的值
-    name: '监控大盘',  // 在菜单中显示的名称
-    icon: 'area-chart',  // 图标是可选的
-    child: [
-      {
-        key: 'option1',
-        name: '模拟CRUD',
-        icon: 'play-circle',   // 二级三级菜单也可以带图标
-      },
-      /*{
-        key: 'option2',
-        name: '图片DEMO',
-        icon: 'android',
-      },*/
-      {
-        key: 'option3',
-        name: '自定义操作',
-        icon: 'bulb',
-      },
-      {
-        key: 'monitor',
-        name: '监控大盘',
-        icon: 'bulb',
-      },
-    ],
+    key: 'core1',
+    name: '监控大盘',
+    icon: 'area-chart',
   },
   {
     key: 'job',
@@ -50,7 +55,7 @@ const sidebarMenu = [
     icon: 'clock-circle',
   },
   {
-    key: 'machine',
+    key: 'group',
     name: '机器列表',
     icon: 'clock-circle',
   },
@@ -154,16 +159,13 @@ export const headerMenu = [
     key: 'userMenu',
     child: [
       {
-        key: 'redirectBC',
-        name: '百川admin后台',
+        key: 'personal',
+        name: '个人信息',
         icon: 'bulb',
-        // 对于headerMenu的菜单项, 可以让它跳到外部地址, 如果设置了url属性, 就会打开一个新窗口
-        // 如果不设置url属性, 行为和sidebarMenu是一样的, 激活特定的组件, 注意在index.js中配置好路由, 否则会404
-        url: 'http://train.xiaojukeji.com/admin-index/#/',
       },
       {
         key: 'user222',
-        name: '个人信息',
+        name: '个人任务',
         icon: 'rocket',
       },
       /*{
@@ -186,26 +188,26 @@ export const headerMenu = [
   },
   {
     key: 'headerMenu2',
-    name: 'header菜单',
+    name: '常用链接',
     icon: 'team',
     child: [
       {
-        key: 'headerMenu111',
-        name: 'timerx使用wiki',
-        icon: 'windows',
-        url: 'http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=152839606',
+        key: '百川admin后台',
+        name: '百川admin后台',
+        icon: 'bulb',
+        url: 'http://train.xiaojukeji.com/admin-index/#/',
       },
       {
-        key: '菜单项2',
-        name: '报警',
-        icon: 'chrome',
-        url: 'http://jxy.me',
+        key: '百川特权用户管理',
+        name: '百川特权用户管理',
+        icon: 'rocket',
+        url:  'http://train.xiaojukeji.com/admin/dev/admin/privilege',
       },
       {
-        key: '菜单项3',
-        name: '配置',
+        key: 'lean',
+        name: 'lean平台',
         icon: 'chrome',
-        url: 'http://jxy.me',
+        url: 'http://lean.xiaojukeji.com/project/HYMB8951',
       },
     ],
   },

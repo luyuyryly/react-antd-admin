@@ -56,6 +56,10 @@ module.exports = {
         test: /\.(png|jpg|svg)$/,
         loader: 'url?limit=25000',  // 图片小于一定值的话转成base64
       },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
+      },
     ],
   },
 

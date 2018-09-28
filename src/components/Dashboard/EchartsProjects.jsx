@@ -1,6 +1,4 @@
-/**
- * Created by hao.cheng on 2017/5/5.
- */
+
 import React from 'react';
 import ReactEcharts from 'echarts-for-react';
 
@@ -13,7 +11,7 @@ for (let i = 0; i < 50; i++) {
 
 const option = {
     title: {
-        text: '最近50天每天项目完成情况',
+        text: '任务成功/失败数量(周围度)',
         left: 'center',
         textStyle: {
             color: '#ccc',

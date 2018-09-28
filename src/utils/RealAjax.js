@@ -180,6 +180,39 @@ class CRUDUtil {
   }
 
   /**
+   * 针对任务列表页面的操作：停止下次任务
+   *
+   * @param jobId 要删除的记录的主键
+   * @returns {*}
+   */
+  pause(keys = []) {
+    const tmp = keys.join(',');
+    return this.ajax.get(`${globalConfig.getAPIPath()}/${this.tableName}/pause`, {params: {jobId: tmp}});
+  }
+
+  /**
+   * 针对任务列表页面的操作：立即停止本次任务
+   *
+   * @param jobId 主键
+   * @returns {*}
+   */
+  interrupt(keys = []) {
+    const tmp = keys.join(',');
+    return this.ajax.get(`${globalConfig.getAPIPath()}/${this.tableName}/interrupt`, {params: {jobId: tmp}});
+  }
+
+  /**
+   * 针对任务列表页面的操作：立即执行本次任务
+   *
+   * @param jobId 要删除的记b录的主键
+   * @returns {*}
+   */
+  resume(keys = []) {
+    const tmp = keys.join(',');
+    return this.ajax.get(`${globalConfig.getAPIPath()}/${this.tableName}/resume`, {params: {jobId: tmp}});
+  }
+
+  /**
    * 从服务端获取某个表的schema, 会merge到本地的schema中
    *
    * @returns {*}

@@ -1,6 +1,4 @@
-/**
- * Created by hao.cheng on 2017/5/5.
- */
+
 import React from 'react';
 import ReactEcharts from 'echarts-for-react';
 import echarts from 'echarts';
@@ -117,5 +115,6 @@ const EchartsViews = () => (
         className={'react_for_echarts'}
     />
 );
+
 
 export default EchartsViews;

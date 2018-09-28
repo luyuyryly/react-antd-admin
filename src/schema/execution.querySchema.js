@@ -9,13 +9,12 @@ module.exports = [
     dataType: 'varchar',
   },
   {
-    key: 'status',
+    key: 'taskStatus',
     title: '状态',
     dataType: 'varchar',
   },
-
   {
-    key: 'ip',
+    key: 'hostAddress',
     title: 'ip',
     dataType: 'varchar',
   },
