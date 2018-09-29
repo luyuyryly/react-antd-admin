@@ -79,21 +79,22 @@ class App extends React.Component {
    */
   async componentDidMount() {
     if (!this.props.login) {
-      const hide = message.loading('正在获取用户信息...', 0);
+//      const hide = message.loading('正在获取用户信息...', 0);
 
       try {
         // 先去服务端验证下, 说不定已经登录了
-        const res = await ajax.getCurrentUser();
-        hide();
+//        const res = await ajax.getCurrentUser();
+//        hide();
 
         // 注意这里, debug模式下每次刷新都必须重新登录
-        if (res.success && !globalConfig.debug) {
+//        if (res.success && !globalConfig.debug) {
+        if (!globalConfig.debug) {
           // 这里不需要setState了, 因为setState的目的是为了re-render, 而下一句会触发redux的状态变化, 也会re-render
           // 所以直接修改状态, 就是感觉这么做有点奇怪...
           this.state.tryingLogin = false;
           // App组件也可能触发loginSuccess action
           this.props.handleLoginSuccess(res.data);
-        } else {
+        }else {
           this.handleLoginError('获取用户信息失败, 请重新登录');
         }
       } catch (e) {
@@ -113,7 +114,7 @@ class App extends React.Component {
       const redirect = encodeURIComponent(window.location.href);
       window.location.href = `${globalConfig.login.sso}${redirect}`;
     } else {
-      message.error(errorMsg);
+//      message.error(errorMsg);
       logger.debug('not login, redirect to Login component');
       this.setState({tryingLogin: false});
     }

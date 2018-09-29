@@ -92,11 +92,12 @@ class Ajax {
 //       result.data = 'guest';
 //       resolve(result);
 //     });
-    const result = {  // 暂存mock的ajax返回, 总共有5个字段
-      success: true,
-      code: 0
-    };
-    return result;
+//     const result = {  // 暂存mock的ajax返回, 总共有5个字段
+//       success: true,
+//       code: 0
+//     };
+//    return result;
+    return this.get(`${globalConfig.getAPIPath()}${globalConfig.login.getCurrentUser}`);
   }
 
   /**
@@ -107,7 +108,8 @@ class Ajax {
    */
   login(username, password) {
     const headers = {'Content-Type': 'application/x-www-form-urlencoded'};
-    return this.post(`${globalConfig.getAPIPath()}${globalConfig.login.validate}`, {username, password}, {headers});
+//    return this.post(`${globalConfig.getAPIPath()}${globalConfig.login.validate}`, {username, password}, {headers});
+    return this.post(`${globalConfig.getAPIPath()}${globalConfig.login.validate}`, {username, password});
   }
 
   /**
