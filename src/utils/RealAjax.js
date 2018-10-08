@@ -112,6 +112,34 @@ class Ajax {
     return this.post(`${globalConfig.getAPIPath()}${globalConfig.login.validate}`, {username, password});
   }
 
+  countTask() {
+    return this.get(`${globalConfig.getAPIPath()}/job/countTask`, {});
+  }
+
+  countSuccess(){
+    const requestParam= new Object();
+    requestParam.finishTime = new Date();
+    requestParam.interval = 0;
+    requestParam.taskStatus = "成功";
+    const queryObj = new Object();
+    queryObj.params={
+      data : JSON.stringify(requestParam),
+    }
+    return this.get(`${globalConfig.getAPIPath()}/execution/count`, queryObj);
+  }
+
+  countFail(){
+    const requestParam= new Object();
+    requestParam.finishTime = new Date();
+    requestParam.interval = 0;
+    requestParam.taskStatus = "失败";
+    const queryObj = new Object();
+    queryObj.params={
+      data : JSON.stringify(requestParam),
+    }
+    return this.get(`${globalConfig.getAPIPath()}/execution/count`, queryObj);
+  }
+
   /**
    *  封装CRUD相关操作
    *

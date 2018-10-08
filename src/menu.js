@@ -40,7 +40,7 @@ const sidebarMenu = [
   //   ],
   // },
   {
-    key: 'core1',
+    key: 'monitor',
     name: '监控大盘',
     icon: 'area-chart',
   },
