@@ -1,8 +1,8 @@
 var express = require('express');
-var pug = require('pug');
 var fs = require('fs');
+var logger = require('morgan');
 // 获取文件
-var getFileSync = function(path, encoding){
+let getFileSync = function(path, encoding){
   if(encoding === undefined){
     encoding = 'utf8';
   }
@@ -18,28 +18,11 @@ var getFileSync = function(path, encoding){
   return fileCon;
 };
 
-// 获取文件json对象
-// var getJSONSync = function(path){
-//   var fileCon = getFileSync(path),
-//     data = null;
-//   if(fileCon){
-//     fileCon =fileCon.replace(/\/\/ [^\n]*/g, '');
-//     try{
-//       data = JSON.parse(fileCon);
-//     }catch(e){
-//       console.log(e);
-//       return null;
-//     }
-//   }
-//   return data;
-// };
-
-//var config = getJSONSync("package.json");
-var html = getFileSync("",'utf8');
+var html = getFileSync("./dist/index.html",'utf8');
 
 var app = express();
 
-var router = express.Router();
+const router = express.Router();
 router.use(logger("combined"));
 
 // 首页

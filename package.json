@@ -56,7 +56,10 @@
     "stylelint-config-standard": "9.0.0",
     "url-loader": "0.5.7",
     "webpack": "1.14.0",
-    "webpack-dev-server": "1.16.2"
+    "webpack-dev-server": "1.16.2",
+    "express": "^4.16.3",
+    "fs": "0.0.1-security",
+    "morgan": "^1.9.0"
   },
   "dependencies": {
     "echarts": "^4.2.0-rc.1",
