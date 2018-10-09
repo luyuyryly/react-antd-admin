@@ -1,0 +1,10 @@
+{
+  "apps" : [{
+    "name"        : "tiemrx",
+    "script"      : "./app.js",
+    "merge_logs"      : true,
+    "env" : {
+      "NODE_ENV": "production"
+    }
+  }]
+}

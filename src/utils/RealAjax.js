@@ -129,10 +129,35 @@ class Ajax {
   }
 
   countFail(){
+    console.log("hhhhh");
     const requestParam= new Object();
     requestParam.finishTime = new Date();
     requestParam.interval = 0;
     requestParam.taskStatus = "失败";
+    const queryObj = new Object();
+    queryObj.params={
+      data : JSON.stringify(requestParam),
+    }
+    return this.get(`${globalConfig.getAPIPath()}/execution/count`, queryObj);
+  }
+
+  countFailWithInterval(i){
+    const requestParam= new Object();
+    requestParam.finishTime = new Date();
+    requestParam.interval = i;
+    requestParam.taskStatus = "失败";
+    const queryObj = new Object();
+    queryObj.params={
+      data : JSON.stringify(requestParam),
+    }
+    return this.get(`${globalConfig.getAPIPath()}/execution/count`, queryObj);
+  }
+
+  countSuccessWithInterval(i){
+    const requestParam= new Object();
+    requestParam.finishTime = new Date();
+    requestParam.interval = i;
+    requestParam.taskStatus = "成功";
     const queryObj = new Object();
     queryObj.params={
       data : JSON.stringify(requestParam),

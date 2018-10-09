@@ -23,6 +23,7 @@ module.exports = [
     key: 'jobName',
     title: '任务名称',
     dataType: 'varchar',
+    width: 120,
   },
   {
     key: 'description',

@@ -1,26 +1,36 @@
 
 import React from 'react';
 import ReactEcharts from 'echarts-for-react';
+import ajax from '../../utils/ajax';
 
 let xAxisData = [];
 let data = [];
-for (let i = 0; i < 50; i++) {
-    xAxisData.push(i);
-    data.push(Math.ceil((Math.cos(i / 5) * (i / 5) + i / 6) * 5) + 10);
+for (let i = 0; i < 7; i++) {
+  const date = new Date();
+  xAxisData.push(date.getFullYear()+"."+date.getMonth()+"."+date.getDay());
+  putCount(i);
+}
+
+function putCount(i) {
+  const res =  ajax.countSuccessWithInterval(i);
+  data[i] = res.data;
+  res.then(function(value){
+    data[6-i] = value.data;
+  })
 }
 
 const option = {
     title: {
-        text: '任务成功/失败数量(周围度)',
+        text: '任务成功数量(周围度)',
         left: 'center',
         textStyle: {
             color: '#ccc',
-            fontSize: 10
+            fontSize: 12
         }
     },
     backgroundColor: '#08263a',
     xAxis: [{
-        show: true,
+        show: false,
         data: xAxisData,
         axisLabel: {
             textStyle: {

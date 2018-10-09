@@ -8,6 +8,7 @@ import b1 from '../../style/imgs/b1.jpg';
 import '../../style/index.less';
 import globalConfig from '../../config';
 import ajax from '../../utils/ajax';
+import EchartsProjects2 from './EchartsProjects2';
 
 
 class Dashboard extends React.PureComponent {
@@ -76,13 +77,20 @@ class Dashboard extends React.PureComponent {
                           </Card>
                       </div>
                   </Col>
-                  <Col className="gutter-row" md={21}>
+                  <Col className="gutter-row" md={12}>
                       <div className="gutter-box">
                           <Card bordered={false} className={'no-padding'}>
-                              <EchartsProjects />
+                              <EchartsProjects2 />
                           </Card>
                       </div>
                   </Col>
+                <Col className="gutter-row" md={12}>
+                  <div className="gutter-box">
+                    <Card bordered={false} className={'no-padding'}>
+                      <EchartsProjects />
+                    </Card>
+                  </div>
+                </Col>
               </Row>
               <Row gutter={10}>
                   <Col className="gutter-row" md={8}>
