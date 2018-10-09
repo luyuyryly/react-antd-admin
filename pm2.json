@@ -2,6 +2,8 @@
   "apps" : [{
     "name"        : "timerx",
     "script"      : "./app.js",
+    "error_file"      : "/home/xiaoju/logs/timerx/err.log",
+    "out_file"        : "/home/xiaoju/logs/timerx/out.log",
     "merge_logs"      : true,
     "env" : {
       "NODE_ENV": "production"
