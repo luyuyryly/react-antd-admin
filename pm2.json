@@ -1,6 +1,6 @@
 {
   "apps" : [{
-    "name"        : "tiemrx",
+    "name"        : "timerx",
     "script"      : "./app.js",
     "merge_logs"      : true,
     "env" : {
