@@ -69,14 +69,6 @@ module.exports = {
     ],
   },
 
-  devServer: {
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
-      "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
-    }
-  },
-
   // 减小bundle size是个很大的学问...
   // https://chrisbateman.github.io/webpack-visualizer/
   // http://stackoverflow.com/questions/34239731/how-to-minimize-the-size-of-webpacks-bundle
