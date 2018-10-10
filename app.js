@@ -9,7 +9,11 @@ const app = new Koa();
 // files 
 app.use(serve(path.join(__dirname, './dist')));  
 // 添加路由 
-router.get('/', async (ctx, next) => {   ctx.response.body = 'hello'; });  
+router.get('/', async (ctx, next) => {
+  if (ctx.request.method == "OPTIONS") {
+    ctx.response.status = 200
+  }
+  ctx.response.body = 'hello'; });  
 app.use(router.routes()); 
 app.listen(9090); console.log('listening on port 9090...');
 
