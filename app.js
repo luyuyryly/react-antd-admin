@@ -10,7 +10,9 @@ const app = new Koa();
 app.use(serve(path.join(__dirname, './dist')));  
 // 添加路由 
 router.get('/', async (ctx, next) => {
+  console.log("begin")
   if (ctx.request.method == "OPTIONS") {
+    console.log("options")
     ctx.response.status = 200
   }
   ctx.response.body = 'hello'; });  
