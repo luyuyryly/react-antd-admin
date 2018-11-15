@@ -70,11 +70,11 @@ module.exports = [
         type: 'update',  // 更新单条记录
         keys: ['cronExpression'],  // 允许更新哪些字段, 如果不设置keys, 就允许更所有字段
       },
-      {
+      /*{
         name: '编辑',
         type: 'update',
         keys: ['score', 'gpa'],  // 弹出的modal中只会有这两个字段
-      },
+      },*/
       {
         type: 'newLine',  // 换行, 纯粹用于排版的, 更美观一点
       },
