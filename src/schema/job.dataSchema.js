@@ -70,6 +70,10 @@ module.exports = [
         type: 'update',  // 更新单条记录
         keys: ['cronExpression'],  // 允许更新哪些字段, 如果不设置keys, 就允许更所有字段
       },
+      {
+        name: '暂停',
+        type: 'pause',
+      },
       /*{
         name: '编辑',
         type: 'update',
@@ -79,16 +83,16 @@ module.exports = [
         type: 'newLine',  // 换行, 纯粹用于排版的, 更美观一点
       },
       {
-        name: '暂停',
-        type: 'pause',
-      },
-      {
         name: '立即暂停',
         type: 'interrupt',
       },
       {
-        name: '立即执行',
+        name: '下次执行',
         type: 'resume',
+      },
+      {
+        name: '立即执行',
+        type: 'trigger',
       },
       // {
       //   name: '更新生日',

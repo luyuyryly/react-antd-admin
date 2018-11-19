@@ -257,7 +257,7 @@ class CRUDUtil {
   }
 
   /**
-   * 针对任务列表页面的操作：立即执行本次任务
+   * 针对任务列表页面的操作：下次执行本次任务
    *
    * @param jobId 要删除的记b录的主键
    * @returns {*}
@@ -265,6 +265,17 @@ class CRUDUtil {
   resume(keys = []) {
     const tmp = keys.join(',');
     return this.ajax.get(`${globalConfig.getAPIPath()}/${this.tableName}/resume`, {params: {jobId: tmp}});
+  }
+
+  /**
+   * 针对任务列表页面的操作：立即执行本次任务
+   *
+   * @param jobId 要删除的记b录的主键
+   * @returns {*}
+   */
+  trigger(keys = []) {
+    const tmp = keys.join(',');
+    return this.ajax.get(`${globalConfig.getAPIPath()}/${this.tableName}/trigger`, {params: {jobId: tmp}});
   }
 
   /**
