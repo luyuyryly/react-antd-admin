@@ -68,7 +68,7 @@ module.exports = [
       {
         name: '更新cron表达式',
         type: 'update',  // 更新单条记录
-        keys: ['cronExpression'],  // 允许更新哪些字段, 如果不设置keys, 就允许更所有字段
+        keys: ['id','cronExpression'],  // 允许更新哪些字段, 如果不设置keys, 就允许更所有字段
       },
       {
         name: '暂停',
