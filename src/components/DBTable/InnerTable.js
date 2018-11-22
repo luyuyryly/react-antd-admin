@@ -669,7 +669,7 @@ class InnerTable extends React.PureComponent {
       if (res.success) {
         notification.success({
           message: '更新成功',
-          description: `更新${res.data}条数据`,
+//          description: `更新${res.data}条数据`,
           duration: 3,
         });
 
