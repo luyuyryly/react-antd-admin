@@ -259,7 +259,7 @@ class CRUDUtil {
   /**
    * 针对任务列表页面的操作：下次执行本次任务
    *
-   * @param jobId 要删除的记b录的主键
+   * @param jobId 要删除的记录的主键
    * @returns {*}
    */
   resume(keys = []) {
@@ -270,7 +270,7 @@ class CRUDUtil {
   /**
    * 针对任务列表页面的操作：立即执行本次任务
    *
-   * @param jobId 要删除的记b录的主键
+   * @param jobId 要删除的记录的主键
    * @returns {*}
    */
   trigger(keys = []) {

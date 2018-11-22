@@ -850,7 +850,6 @@ class InnerTable extends React.PureComponent {
       if (res.success) {
         notification.success({
           message: '操作成功',
-//          description: `删除${res.data}条数据`,
           duration: 3,
         });
 

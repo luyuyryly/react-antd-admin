@@ -61,7 +61,7 @@ const RenderUtils = {
         col.render = this.getFileRender;
       } else if (field.key === ACTION_KEY && field.actions && field.actions.length > 0) {
         logger.debug('bind actions render for field %o', field);
-        col.render = this.getActionRender(field, primaryKey)(onSingleRecordUpdate, onSingleRecordDelete,onSingleRecordPause, onSingleRecordResume,onSingleRecordTrigger,onSingleRecordInterrupt,onSingleRecordComponent);
+        col.render = this.getActionRender(field, primaryKey)(onSingleRecordUpdate, onSingleRecordDelete,onSingleRecordPause,onSingleRecordInterrupt, onSingleRecordResume,onSingleRecordTrigger,onSingleRecordComponent);
       }
     });
 
