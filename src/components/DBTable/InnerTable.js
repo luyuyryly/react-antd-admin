@@ -151,6 +151,7 @@ class InnerTable extends React.PureComponent {
 
     // 这段代码真是好蛋疼...
     for (const key in obj) {
+      console.log("$$optionMap = " + this.fieldMap.get(key).$$optionMap);
       if (this.fieldMap.get(key).$$optionMap) {
         const optionMap = this.fieldMap.get(key).$$optionMap;
         if (obj[key] instanceof Array) {
