@@ -55,6 +55,11 @@ const sidebarMenu = [
     icon: 'clock-circle',
   },
   {
+    key: 'group',
+    name: '分组列表',
+    icon: 'clock-circle',
+  },
+  {
     key: 'machine',
     name: '机器列表',
     icon: 'clock-circle',

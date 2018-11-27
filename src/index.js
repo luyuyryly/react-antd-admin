@@ -77,6 +77,7 @@ const routes = (
         <Route path="monitor" component={Dashboard} />
         <Route path="job" tableName="job" getComponent={DBTableContainer} />
         <Route path="execution" tableName="execution" getComponent={DBTableContainer} />
+        <Route path="group" tableName="group" getComponent={DBTableContainer} />
         <Route path="machine" tableName="machine" getComponent={DBTableContainer} />
 
         <Route path="*" component={Error} />
