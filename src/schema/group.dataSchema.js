@@ -22,20 +22,5 @@ module.exports = [
     key: 'creator',
     title: '创建人',
     dataType: 'varchar',
-  },
-  {
-    key: 'modifer',
-    title: '修改人',
-    dataType: 'varchar',
-  },
-  {
-    key: 'createTime',
-    title: '创建时间',
-    dataType: 'datetime',
-  },
-  {
-    key: 'modifyTime',
-    title: '修改时间',
-    dataType: 'datetime',
   }
 ];

@@ -208,7 +208,7 @@ class CRUDUtil {
    * @returns {*}
    */
   insert(dataObj) {
-    return this.ajax.post(`${globalConfig.getAPIPath()}/${this.tableName}/insert`, dataObj);
+    return this.ajax.post(`${globalConfig.getAPIPath()}/${this.tableName}/add`, dataObj);
   }
 
   /**
