@@ -20,8 +20,22 @@ module.exports = [
   },
   {
     key: 'creator',
-    title: '创建者',
+    title: '创建人',
     dataType: 'varchar',
-    placeholder: '创建者',
   },
+  {
+    key: 'modifer',
+    title: '修改人',
+    dataType: 'varchar',
+  },
+  {
+    key: 'createTime',
+    title: '创建时间',
+    dataType: 'datetime',
+  },
+  {
+    key: 'modifyTime',
+    title: '修改时间',
+    dataType: 'datetime',
+  }
 ];
