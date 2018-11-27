@@ -7,6 +7,5 @@ module.exports = [
     key: 'name',   // 传递给后端的字段名
     title: '分组名',    // 前端显示的名称
     dataType: 'varchar',
-    visible : false
   },
 ];

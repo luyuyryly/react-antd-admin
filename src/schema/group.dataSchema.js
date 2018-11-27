@@ -32,12 +32,10 @@ module.exports = [
     key: 'createTime',
     title: '创建时间',
     dataType: 'datetime',
-    visible: false
   },
   {
     key: 'modifyTime',
     title: '修改时间',
     dataType: 'datetime',
-    visible: false
   }
 ];

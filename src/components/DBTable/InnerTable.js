@@ -625,7 +625,7 @@ class InnerTable extends React.PureComponent {
       if (res.success) {
         notification.success({
           message: '新增成功',
-          description: this.primaryKey ? `新增数据行 主键=${res.data[this.primaryKey]}` : '',
+//          description: this.primaryKey ? `新增数据行 主键=${res.data[this.primaryKey]}` : '',
           duration: 3,
         });
 
