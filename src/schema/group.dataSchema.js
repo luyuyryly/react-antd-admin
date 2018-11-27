@@ -14,9 +14,9 @@ module.exports = [
   },
   {
     key: 'name',
-    title: '机器名',
+    title: '分组名',
     dataType: 'varchar',
-    placeholder: '机器名',  // 提示语
+    placeholder: '分组名',  // 提示语
   },
   {
     key: 'creator',
@@ -32,10 +32,12 @@ module.exports = [
     key: 'createTime',
     title: '创建时间',
     dataType: 'datetime',
+    visible: false
   },
   {
     key: 'modifyTime',
     title: '修改时间',
     dataType: 'datetime',
+    visible: false
   }
 ];
