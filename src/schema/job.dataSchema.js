@@ -32,7 +32,7 @@ module.exports = [
   },
   {
     key: 'groupId',
-    title: 'trigger名称',
+    title: '分组id',
     dataType: 'varchar',
   },
   {
